@@ -50,7 +50,10 @@ public class DukeTest {
         new DoAfterTaskTest().test("todo going after my work /after lunch");
 
         //Test for within period task
-        new WithinPeriodTask().test("todo completing my work within my house /within 1 sep to 2 dec");
+        new WithinPeriodTaskTest().test("todo completing my work within my house /within 1 sep to 2 dec");
+
+        //Test for within period task
+        new FixedDurationTaskTest().test("todo needing to finish my needs /needs 2 hours");
 
     }
 

@@ -11,7 +11,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class WithinPeriodTask {
+public class FixedDurationTaskTest {
     private static final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private static final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     private static final PrintStream originalOut = System.out;
@@ -36,7 +36,7 @@ public class WithinPeriodTask {
         TaskList taskList = new TaskList();
         Command c = Parser.parse(input);
         c.execute(taskList, DukeTest.ui, DukeTest.storage);
-        String exp = "Got it. I've added this task: \n   [T][✗] completing my work within my house within 1 sep to 2 dec\nNow you have 1 tasks in the list.";
+        String exp = "Got it. I've added this task: \n   [T][✗] needing to finish my needs (needs 2 hours)\nNow you have 1 tasks in the list.";
         assertEquals(exp, outContent.toString().trim());
         restoreStreams();
     }
